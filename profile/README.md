@@ -76,14 +76,23 @@ In addition to Angularization, there's the satellite concept, which involves cre
 
 This, by the way, exemplifies the application of the Open/Closed principle, from SOLID. 
 
+### 🌠 An SDK is born
 
-<!--
+For these conceptual ideas to be implemented, a lot of effort would be necessary. This can prevent teams from deciding to work with such concepts. While this is understandable, the thought of letting all of these potential advantages slip away due to a lack of resources is troubling. This is why the Clean Arch Enablers (CAE) was born: to enable teams to apply the architecture and explore its potential.
 
-**Here are some ideas to get you started:**
+Step by step, we will be delivering new pieces of software that will make the experience effortless, while also enabling the ability to take advantage of the benefits.
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+<br>
+
+## ⚡Joining the force
+
+If anyone gets interested in becoming an official collaborator, it is very simple. The workflow is:
+
+1. 🔍 Identify where it would be interesting to collaborate.
+2. 📝 Open a new issue on the repository of the component that has an opportunity for enhancement, specifying the intended changes.
+3. 🛠️ Create a new branch to address the new feature, refactor, or fix.
+4. 📩 Once it is done, open a new pull request.
+5. 🔀 Pass through the code review phase.
+6. ✅ Welcome to the team!
+
+Once completed the workflow, the developer gets associated with our GitHub and LinkedIn organization pages.
