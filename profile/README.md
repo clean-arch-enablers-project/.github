@@ -26,6 +26,8 @@ Clean Arch Enablers (CAE) is an SDK designed to facilitate the application of cl
 - The components made for Java are available on the Maven Central Repository: [CAE on Maven](https://central.sonatype.com/namespace/com.clean-arch-enablers).
 - Discussions about the SDK can be found here: [CAE Discussions](https://github.com/orgs/clean-arch-enablers-project/discussions).
 - Task Board for tracking what's going on: [CAE Task Board](https://github.com/orgs/clean-arch-enablers-project/projects/1)
+- Organization page on LinkedIn: [CAE on Linkedin](https://www.linkedin.com/company/clean-arch-enablers)
+- Organization page on Postman: [CAE on Postman](https://www.postman.com/clean-arch-enablers)
 
 <br>
 
