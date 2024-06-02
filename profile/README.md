@@ -68,6 +68,14 @@ Code is solely written to make a programmable machine execute something. As deve
 
 This concept is well addressed by OOP, microservices' domain boundaries, and DDD. As mentioned, this is a well-known concept. However, the specific implementation of it in the CAE SDK is that the axis of angularized components is the use case elements of an application. It is not just about creating random OOP objects or _macro microservices_; it is about establishing that the axis are the features of an application, its functionalities, a.k.a its use cases.
 
+With this concept implemented, it is possible to achieve flexibility in how to dispatch functionalities of an application since they are their own distinct components. Will they be dispatched as REST API endpoints? AWS Lambda functions? Kafka consumers? Libraries for BFFs? That can be explored, enabling teams to experiment and reach innovation with less effort focused on building entire PoCs from scratch.
+
+### 🛰️ The Satellites Concept
+
+In addition to Angularization, there's the _satellite_ concept, which involves creating auxiliary components that orbit around the main, angularized functionalities. These satellites can provide supplementary features, such as logging, monitoring, input validation, or even cache management, without interfering with the core application logic.
+
+
+
 <!--
 
 **Here are some ideas to get you started:**
