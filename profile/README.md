@@ -5,10 +5,17 @@
 
 Summary:
 
-- 🧰 The SDK
-- 🛠️ The tools
-- 🛤️ What's the vision?
-- ⚡Joining the force
+- 🧰 [The SDK](https://github.com/clean-arch-enablers-project#-the-sdk)
+- 🛠️ [The tools](https://github.com/clean-arch-enablers-project#%EF%B8%8F-the-tools)
+  - [cae-framework](https://github.com/clean-arch-enablers-project#%EF%B8%8F-cae-framework)
+  - [cae-cli](https://github.com/clean-arch-enablers-project#-cae-cli)
+  - [cae-utils](https://github.com/clean-arch-enablers-project#%EF%B8%8F-cae-utils)
+  - [cae-service-catalog](https://github.com/clean-arch-enablers-project#-cae-service-catalog)
+- 🛤️ [What's the vision?](https://github.com/clean-arch-enablers-project#%EF%B8%8F-whats-the-vision)
+  - 🧩 [The _Angularization_ Concept](https://github.com/clean-arch-enablers-project#-the-angularization-concept)
+  - 🛰️ [The _Satellites_ Concept](https://github.com/clean-arch-enablers-project#%EF%B8%8F-the-satellites-concept)
+  - 🌠 [An SDK is born](https://github.com/clean-arch-enablers-project#-an-sdk-is-born)
+- ⚡[Joining the force](https://github.com/clean-arch-enablers-project#joining-the-force)
 
 <br>
 
