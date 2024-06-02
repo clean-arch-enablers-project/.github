@@ -5,8 +5,8 @@
 
 Symbol Key:
 
-- ``✅`` — _Release state_
-- ``✔️`` — _Snapshot state_
+- ``✅`` — _Under release state_
+- ``✔️`` — _Under snapshot state_
 - ``⏳`` — _Under full development state_
 
 <br>
