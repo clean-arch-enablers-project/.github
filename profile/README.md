@@ -101,7 +101,7 @@ If anyone gets interested in becoming an official collaborator, it is very simpl
 
 1. 🔍 Identify where it would be interesting to collaborate.
 2. 📝 Open a new issue on the repository that has an opportunity for enhancement, specifying the intended changes.
-3. 🛠️ Create a new branch to address the new feature, refactor, or fix.
+3. 🛠️ Create a new branch to address the changes (branches should have the prfix _feature/_, _refact/_, or _fix/_).
 4. 📩 Once it is done, open a new pull request.
 5. 🔀 Pass through the code review phase.
 6. ✅ Welcome to the team!
