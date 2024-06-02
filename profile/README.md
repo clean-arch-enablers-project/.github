@@ -74,7 +74,7 @@ With this concept implemented around the Vertical Slice approach, it is possible
 
 In addition to Angularization, there's the satellite concept, which involves creating auxiliary components that orbit around the main angularized functionalities. These satellites can provide supplementary features such as logging, monitoring, input validation, cache management, or even autodocumentation processes, without interfering with the core application logic.
 
-This exemplifies the application of the Open/Closed principle, from SOLID. 
+This, by the way, exemplifies the application of the Open/Closed principle, from SOLID. 
 
 
 <!--
