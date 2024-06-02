@@ -48,6 +48,18 @@ The goal is to automatically catalog all domains and their respective use cases 
 
 ## 🛤️ What's the vision?
 
+What's behind CAE as a philosophical instance is the idea of having applications follow a well-defined structure and a well-established pattern. This ensures that developers can understand what's going on, even if they are new to a team that has been developing the applications. This is the advantage of using a well-known framework. However, that's not the only thing CAE is about: the concept of having that and also being able to develop applications in a manner that avoids locking them to a specific system architecture or cloud provider is at the core of CAE philosophy. The famous architectural manifesto that aims to achieve this is the Clean Architecture and this is why this SDK is being built around its principles.
+
+### 🧩 The _Angularization_ Concept
+
+By harnessing Clean Architecture principles, the final product features _angularized_ applications. This concept is already well-known, but usually is adopted as an afterthought rather than as a primary axis. 
+
+Breaking it down:
+
+Code is solely written to make a programmable machine execute something. As developers write code, the simplest approach is to create straight sequences of commands without any cohesion. Such sequences don't add up to any coherent structure. The overall picture is loosely defined, without form. This might be acceptable for small applications, but for larger ones, it is not ideal. The angularization effect involves transforming code into well-defined components with clear boundaries, giving it a sense of shape or tangible entity. Metaphorically, elements stop being vague and formless and start having angles, hence the term 'angularization.'
+
+This concept is well addressed by OOP, microservices' domain boundaries, and DDD. As mentioned, this is a well-known concept. However, the specific implementation of it in the CAE SDK is that the axis of angularized components is the use case elements of an application. It is not just about creating random OOP objects or _macro microservices_; it is about establishing that the axis are the features of an application, its functionalities, a.k.a its use cases.
+
 <!--
 
 **Here are some ideas to get you started:**
