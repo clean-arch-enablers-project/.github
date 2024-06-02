@@ -21,7 +21,7 @@ Clean Arch Enablers (CAE) is an SDK designed to facilitate the application of cl
 
 ### ``✔️`` [cae-framework](https://github.com/clean-arch-enablers-project/cae-framework)
 
-From the CAE perspective, clean architecture leverages hexagonal principles by using the Ports & Adapters concept and mixing it with a flavor of the Vertical Slice pattern, componentizing an application by its use cases. That's the premise behind the _cae-framework_: shaping an application based on the axis of its use cases and plugging satellites around them as needed. 
+From the CAE perspective, clean architecture leverages hexagonal principles by using the Ports & Adapters concept and mixing it with a flavor of the Vertical Slice pattern, componentizing an application by its use cases. This is the premise behind the cae-framework: shaping an application based on the axis of its use cases and plugging satellites around them as needed. This is the _angularization_ effect.
 
 ### ``⏳`` [cae-cli](https://github.com/clean-arch-enablers-project/cae-cli)
 
