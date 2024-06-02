@@ -11,6 +11,15 @@ Symbol Key:
 
 <br>
 
+Summary
+
+- 🧰 The SDK
+- 🛠️ The tools
+- 🛤️ What's the vision?
+- ⚡Joining the force
+
+<br>
+
 ## 🧰 The SDK
 
 Clean Arch Enablers (CAE) is an SDK designed to facilitate the application of clean architecture during software development, starting initially from the Java world. By using the SDK, software is created in both modular and easy-to-read manners, enabling numerous possibilities by harnessing the foundational architecture principles.
