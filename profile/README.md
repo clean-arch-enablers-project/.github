@@ -106,7 +106,8 @@ Once completed the workflow, the developer gets associated with our GitHub and L
 
 <br>
 <br>
+<br>
 
 <p align="center">
-  Clean Architecture made easy.
+  CAE: Clean Architecture made easy.
 </p>
