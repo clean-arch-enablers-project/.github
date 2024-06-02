@@ -60,15 +60,15 @@ What's behind CAE as a philosophical instance is the idea of having applications
 
 ### 🧩 The _Angularization_ Concept
 
-By harnessing Clean Architecture principles, the final product features _angularized_ applications. This concept is already well-known, but usually is adopted as an afterthought rather than as a primary axis. 
+By harnessing Clean Architecture principles, the final result is applications that are angularized around the axis of the Vertical Slice pattern. But what is _Angularization_? — one might ask. The concept is already well-known, but is usually adopted as an afterthought rather than as a primary axis.
 
-Breaking it down:
+Breaking down the concept:
 
 Code is solely written to make a programmable machine execute something. As developers write code, the simplest approach is to create straight sequences of commands without any cohesion. Such sequences don't add up to any coherent structure. The overall picture is loosely defined, without form. This might be acceptable for small applications, but for larger ones, it is not ideal. The angularization effect involves transforming code into well-defined components with clear boundaries, giving it a sense of shape or tangible entity. Metaphorically, elements stop being vague and formless and start having angles, hence the term 'angularization.'
 
 This concept is well addressed by OOP, microservices' domain boundaries, and DDD. As mentioned, this is a well-known concept. However, the specific implementation of it in the CAE SDK is that the axis of angularized components is the use case elements of an application. It is not just about creating random OOP objects or _macro microservices_; it is about establishing that the axis are the features of an application, its functionalities, a.k.a its use cases.
 
-With this concept implemented, it is possible to achieve flexibility in how to dispatch functionalities of an application since they are their own distinct components. Will they be dispatched as REST API endpoints? AWS Lambda functions? Kafka consumers? Libraries for BFFs? That can be explored, enabling teams to experiment and reach innovation with less effort focused on building entire PoCs from scratch.
+With this concept implemented around the Vertical Slice approach, it is possible to achieve flexibility in how to dispatch functionalities of an application since they are their own distinct components. Will they be dispatched as REST API endpoints? AWS Lambda functions? Kafka consumers? Libraries for BFFs? This can be explored, enabling teams to experiment and innovate with less effort focused on building entire PoCs from scratch. This is what is referred to as "angularized applications".
 
 ### 🛰️ The _Satellites_ Concept
 
