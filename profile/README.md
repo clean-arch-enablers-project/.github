@@ -96,3 +96,10 @@ If anyone gets interested in becoming an official collaborator, it is very simpl
 6. ✅ Welcome to the team!
 
 Once completed the workflow, the developer gets associated with our GitHub and LinkedIn organization pages.
+
+<br>
+<br>
+
+<p align="center">
+  Clean Architecture made easy.
+</p>
