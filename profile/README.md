@@ -3,14 +3,6 @@
 
 <br>
 
-Symbol Key:
-
-- ``✅`` — _Under release state_
-- ``✔️`` — _Under snapshot state_
-- ``⏳`` — _Under full development state_
-
-<br>
-
 Summary
 
 - 🧰 The SDK
@@ -27,6 +19,13 @@ Clean Arch Enablers (CAE) is an SDK designed to facilitate the application of cl
 <br>
 
 ## 🛠️ The tools
+Symbol Key:
+
+- ``✅`` — _Under release state_
+- ``✔️`` — _Under snapshot state_
+- ``⏳`` — _Under full development state_
+
+<br>
 
 ### ``✔️`` [cae-framework](https://github.com/clean-arch-enablers-project/cae-framework)
 
