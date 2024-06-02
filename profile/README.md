@@ -89,7 +89,7 @@ Step by step, we will be delivering new pieces of software that will make the ex
 If anyone gets interested in becoming an official collaborator, it is very simple. The workflow is:
 
 1. 🔍 Identify where it would be interesting to collaborate.
-2. 📝 Open a new issue on the repository of the component that has an opportunity for enhancement, specifying the intended changes.
+2. 📝 Open a new issue on the repository that has an opportunity for enhancement, specifying the intended changes.
 3. 🛠️ Create a new branch to address the new feature, refactor, or fix.
 4. 📩 Once it is done, open a new pull request.
 5. 🔀 Pass through the code review phase.
