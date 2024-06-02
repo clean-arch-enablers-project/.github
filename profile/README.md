@@ -26,7 +26,7 @@ Clean Arch Enablers (CAE) is an SDK designed to facilitate the application of cl
 <br>
 
 ## 🛠️ The tools
-Symbol Key:
+State Symbol Key:
 
 - ``✅`` — _Under release state_
 - ``✔️`` — _Under snapshot state_
