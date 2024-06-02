@@ -70,7 +70,7 @@ This concept is well addressed by OOP, microservices' domain boundaries, and DDD
 
 With this concept implemented, it is possible to achieve flexibility in how to dispatch functionalities of an application since they are their own distinct components. Will they be dispatched as REST API endpoints? AWS Lambda functions? Kafka consumers? Libraries for BFFs? That can be explored, enabling teams to experiment and reach innovation with less effort focused on building entire PoCs from scratch.
 
-### 🛰️ The Satellites Concept
+### 🛰️ The _Satellites_ Concept
 
 In addition to Angularization, there's the _satellite_ concept, which involves creating auxiliary components that orbit around the main, angularized functionalities. These satellites can provide supplementary features, such as logging, monitoring, input validation, or even cache management, without interfering with the core application logic.
 
