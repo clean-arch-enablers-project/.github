@@ -60,7 +60,7 @@ Utility libraries for addressing common needs and establishing expected patterns
 
 Each library is designed to be standalone, so client applications don't have to meet any prerequisites to use them. More libraries are on the way, as many common needs are still unaddressed.
 
-### ``⏳`` [cae-service-catalog](https://github.com/clean-arch-enablers-project/cae-service-catalog) 
+### ``⏳`` cae-service-catalog 
 
 Since CAE client applications are highly angularized, a common pattern can be expected in all of them: they all have Use Case, Adapter, and Assembler instances, which are base components of the _cae-framework_. With this established, a process designed to run during the CI/CD phase can automatically identify, extract, and centralize all of the use case metadata a CAE client application has. This process can be applied across all applications within an organization, ensuring consistent availability of use case information. No more getting the runaround for members of organizations that use the CAE SDK. This is the premise of the real-time Service Catalog tool.
 
