@@ -57,6 +57,7 @@ Utility libraries for addressing common needs and establishing expected patterns
 - ``✔️`` [cae-utils-trier](https://github.com/clean-arch-enablers-project/cae-utils-trier)
 - ``✔️`` [cae-utils-http-client](https://github.com/clean-arch-enablers-project/cae-utils-http-client)
 - ``✔️`` [cae-common-primary-adapters](https://github.com/clean-arch-enablers-project/cae-common-primary-adapters)
+- ``✔️`` [cae-rdb](https://github.com/clean-arch-enablers-project/cae-rdb)
 
 Each library is designed to be standalone, so client applications don't have to meet any prerequisites to use them. More libraries are on the way, as many common needs are still unaddressed.
 
