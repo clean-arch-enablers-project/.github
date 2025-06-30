@@ -10,7 +10,7 @@ Summary:
   - [cae-framework](https://github.com/clean-arch-enablers-project#%EF%B8%8F-cae-framework)
   - [cae-cli](https://github.com/clean-arch-enablers-project#-cae-cli)
   - [cae-utils](https://github.com/clean-arch-enablers-project#%EF%B8%8F-cae-utils)
-  - [cae-service-catalog](https://github.com/clean-arch-enablers-project#-cae-service-catalog)
+  - [cae-domain-catalog](https://github.com/clean-arch-enablers-project#-cae-domain-catalog)
 - 🛤️ [What's the vision?](https://github.com/clean-arch-enablers-project#%EF%B8%8F-whats-the-vision)
   - 🧩 [The _Angularization_ Concept](https://github.com/clean-arch-enablers-project#-the-angularization-concept)
   - 🛰️ [The _Satellites_ Concept](https://github.com/clean-arch-enablers-project#%EF%B8%8F-the-satellites-concept)
@@ -61,9 +61,9 @@ Utility libraries for addressing common needs and establishing expected patterns
 
 Each library is designed to be standalone, so client applications don't have to meet any prerequisites to use them. More libraries are on the way, as many common needs are still unaddressed.
 
-### ``⏳`` cae-service-catalog 
+### ``⏳`` cae-domain-catalog 
 
-Since CAE client applications are highly angularized, a common pattern can be expected in all of them: they all have Use Case, Adapter, and Assembler instances, which are base components of the _cae-framework_. With this established, a process designed to run during the CI/CD phase can automatically identify, extract, and centralize all of the use case metadata a CAE client application has. This process can be applied across all applications within an organization, ensuring consistent availability of use case information. No more getting the runaround for members of organizations that use the CAE SDK. This is the premise of the real-time Service Catalog tool.
+Since CAE client applications are highly angularized, a common pattern can be expected in all of them: they all have Use Case, Adapter, and Assembler instances, which are base components of the _cae-framework_. With this established, a process designed to run during the CI/CD phase can automatically identify, extract, and centralize all of the use case metadata a CAE client application has. This process can be applied across all applications within an organization, ensuring consistent availability of use case information. No more getting the runaround for members of organizations that use the CAE SDK. This is the premise of the real-time Domain Catalog tool.
 
 The goal is to automatically catalog all domains and their respective use cases in a centralized repository, ensuring that documentation is naturally generated and accessible to everyone within an organization, thereby neutralizing the Silo Effect that some companies unfortunately experience.
 
