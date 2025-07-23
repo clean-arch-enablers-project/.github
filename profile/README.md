@@ -206,7 +206,7 @@ public class SomeType{
     */
     public String doSomethingWith(String thisString){
         return Trier.of(() -> thisString.concat("another string")) //<- encapsula ação
-            .onUnexpectedExceptions(ex -> new InternalMappedException("ouch!", ex)) //<- parametriza handler
+            .onUnexpectedExceptions(ex -> new InternalMappedException("problem at doSomething...", ex)) //<- parametriza handler
             .execute(); //<- executa ação pronto para usar o handler
     }
     
