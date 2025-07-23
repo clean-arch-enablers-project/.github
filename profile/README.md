@@ -97,7 +97,7 @@ Fica assim:
 
 ### ``FunctionUseCase<I, O>``
 ```java
-public abstract class FunctionUseCase<I, O> extends UseCase {
+public abstract class FunctionUseCase<I extends UseCaseInput, O> extends UseCase {
     
     /*
     API do caso de uso. Método concreto. 
@@ -119,7 +119,7 @@ public abstract class FunctionUseCase<I, O> extends UseCase {
 
 ### ``ConsumerUseCase<I>``
 ```java
-public abstract class ConsumerUseCase<I> extends UseCase {
+public abstract class ConsumerUseCase<I extends UseCaseInput> extends UseCase {
 
     /*
     API do caso de uso. Método concreto. 
