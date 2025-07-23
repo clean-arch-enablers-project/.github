@@ -1,5 +1,6 @@
-## Welcome to the place where clean architecture is made easy.
-💡 Discover our artifacts. Understand our vision. Join the force.
+[//]: # (## Welcome to the place where clean architecture is made easy.)
+
+[//]: # (💡 Discover our artifacts. Understand our vision. Join the force.)
 
 > ⚠️ This README is a WIP. Soon it will be complete and in english as well.
 
