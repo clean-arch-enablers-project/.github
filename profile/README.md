@@ -6,7 +6,7 @@
 
 ## A SDK
 
-CAE — _Clean Arch Enablers_ é uma SDK que tem como objetivo habilitar as vantagens da **Arquitetura Limpa** e neutralizar ao máximo a fricção de implementá-la. Para um bom entendimento a respeito dos componentes desta SDK, software deve ser visto como uma entidade que existe exclusivamente para **servir funcionalidades**, e essas funcionalidades são categorizadas como os **Casos de Uso** de tal entidade. Ou seja, são o _para-quê_ de um software existir. 
+CAE — _Clean Arch Enablers_ é a SDK que tem como objetivo habilitar as vantagens da **Arquitetura Limpa** e neutralizar ao máximo a fricção de implementá-la. Para um bom entendimento a respeito dos componentes desta SDK, software deve ser visto como uma entidade que existe exclusivamente para **servir funcionalidades**, e essas funcionalidades são categorizadas como os **Casos de Uso** de tal entidade. Ou seja, são o _para-quê_ de um software existir. 
 
 Vale frisar que esse recorte não é sobre _qualquer_ funcionalidade de uma aplicação, mas sim sobre as que servem de **_ponto de acesso ao domínio_** sendo implementado. Existem funcionalidades que são **Casos de Uso** de um domínio, e funcionalidades que são passos internos de um **Caso de Uso**. É importante saber distinguir cada qual.
 
@@ -91,7 +91,7 @@ public interface ConsumerUseCase<I extends UseCaseInput> extends UseCase { ... }
 
 A intenção do design é que se payloads de input não respeitarem o contrato, uma exception seja lançada e o ``UseCase`` não seja executado. Porém... do jeito até então apresentado, a responsabilidade de chamar o ``UseCaseInput::autoverify`` seria do desenvolvedor, dentro da implementação de seu ``UseCase``. Isso não foi considerado flexibilidade, mas sim brecha. A flexibilidade já é garantida ao deixar que o desenvolvedor escolha colocar ou não anotações nos campos, mas a responsabilidade de garantir que as anotações sejam respeitadas uma vez declaradas no contrato não faz sentido deixar solto. Isso é algo que todo caso de uso que aceita input deveria fazer automaticamente.
 
-Daí nasce a primeira ``Autofeature``: funcionalidades que são internas e automaticamente garantidas a qualquer tipo de ``UseCase``, independente da regra de negócio de uma implementação específica. É então para habilitar a primeira ``Autofeature`` e preparar o terreno para próximas, que os tipos de ``UseCase`` com input deixam de ser interfaces: com a utilização de _Template Pattern_, cada tipo se torna uma **classe abstrata** com implementações padrões que giram em torno de uma regra de negócio abstrata, que só será implementada posteriormente, via polimorfismo. 
+Daí nasce a primeira ``Autofeature``, funcionalidades que são internas e automaticamente garantidas a qualquer tipo de ``UseCase``, independente da regra de negócio de uma implementação específica. É então para habilitar esta primeira ``Autofeature`` e preparar o terreno para próximas, que os tipos de ``UseCase`` com input deixam de ser interfaces: com a utilização de _Template Pattern_, cada tipo se torna uma **classe abstrata** com implementações padrões que giram em torno de uma regra de negócio abstrata, que só será implementada posteriormente, via polimorfismo. 
 
 Fica assim:
 
@@ -182,7 +182,7 @@ public class NotAuthenticatedMappedException extends MappedException {}
 
 Com esse componente da SDK, tipos comuns de exceção são disponibilizados para reuso, bastando aplicá-los em cenários condizentes. Isso incentiva o uso de exceptions semânticas, sem ter a fricção de criá-las manualmente. 
 
-Outro efeito derivado do uso desse componente é que padrões que podem ser esperados são estabelecidos, fomentando previsibilidade não só na SDK em si como também nas suas aplicações clientes. Por exemplo, tipos de ``MappedException`` sempre serão interpretados pela SDK como **cenários de erro intencionalmente mapeados**: é considerado que desenvolvedores fizeram a escolha consciente de lançar esses tipos de exception como parte do fluxo. Portanto, sempre que uma exception é interceptada e ela é do tipo ``MappedException``, ela será propagada adiante sem interferência por parte da SDK.
+Outro efeito derivado do uso desse componente é que padrões são estabelecidos, fomentando previsibilidade não só na SDK em si como também nas suas aplicações clientes. Por exemplo, tipos de ``MappedException`` sempre serão interpretados pela SDK como **cenários de erro intencionalmente mapeados**: é considerado que desenvolvedores fizeram a escolha consciente de lançar esses tipos de exception como parte do fluxo. Portanto, sempre que uma exception é interceptada e ela é do tipo ``MappedException``, ela será propagada adiante sem interferência por parte da SDK.
 
 <br>
 
@@ -192,25 +192,19 @@ Contudo, mesmo que times tenham o cuidado de utilizar subtipos de ``MappedExcept
 <br>
 
 ## ``Trier`` e suas APIs
-O ``Trier`` é como um bloco de ``try-catch``: nele é possível encapsular qualquer tipo de ação, e parametrizar um tratamento específico para o caso dela lançar uma exception **inesperada**, ou seja, diferente de ``MappedException``. O tratamento parametrizável tem o objetivo de transformar tais exceptions inesperadas em instâncias de ``MappedException``, na intenção de controlar o caos e preservar a ordem.
+O ``Trier`` é como um bloco de ``try-catch``: nele é possível encapsular qualquer tipo de ação e parametrizar um tratamento específico em caso dela lançar uma exception **inesperada**, ou seja, diferente de ``MappedException``. O tratamento parametrizável tem o objetivo de transformar tais exceptions inesperadas em instâncias de ``MappedException``, na intenção de controlar o caos e preservar a ordem.
 
 A API mais básica do ``Trier`` é essa:
 
 ```java
-public class SomeType{
-    
-    /*
-    Tenta executar 'thisString.concat("another string")'
-    e se isso der qualquer problema diferente de MappedException, 
-    irá converter para InternalMappedException.
-    */
-    public String doSomethingWith(String thisString){
-        return Trier.of(() -> thisString.concat("another string")) //<- encapsula ação
-            .onUnexpectedExceptions(ex -> new InternalMappedException("problem at doSomething...", ex)) //<- parametriza handler
-            .execute(); //<- executa ação pronto para usar o handler
-    }
-    
-}
+/*
+Tenta executar 'someString.concat("another string")'
+e se isso der qualquer problema diferente de MappedException, 
+irá converter para InternalMappedException.
+*/
+Trier.of(() -> someString.concat("another string")) //<- encapsula ação
+    .onUnexpectedExceptions(ex -> new InternalMappedException("problem at blablabla...", ex)) //<- parametriza handler
+    .execute(); //<- executa ação pronto para usar o handler
 ```
 
 O ``Trier`` pode encapsular qualquer tipo de ação:
@@ -220,7 +214,122 @@ O ``Trier`` pode encapsular qualquer tipo de ação:
 - ações sem entrada e com saída
 - ações sem entrada nem saída
 
-<br>
+
+Além de parametrizar um _handler_ para transformar exceptions inesperadas em ``MappedException``, é possível também definir quais cenários são elegíveis para **retentativas** em caso da ação quebrar.
+
+Funciona assim:
+
+```java
+
+Trier.of(() -> this.doSomethingWith(thatThing))
+        .retryOn(IOException.class, 5, 300, TimeUnit.MILLISECONDS)//<-- retenta até 5x em caso de IOException
+        .retryOn(ServiceUnavailableException.class, 10, 100, TimeUnit.MILLISECONDS)//<-- retenta até 10x em caso de ServiceUnavailableException
+        .onUnexpectedExceptions(this::handleUnexpectedException)
+        .execute();
+
+```
+
+A API ``retryOn`` recebe os seguintes parâmetros:
+
+- a exception que se ocorrer, retentativas devem ser executadas.
+- até quantas vezes para essa exception a ação pode retentar.
+- tempo base para começar a retentar.
+
+O tempo base vai servir como tempo de espera entre a tentativa que falhou e a primeira retentativa após. Uma vez a primeira retentativa também tendo falhado, as próximas irão acontecer com intervalos de tempo diferentes. A fórmula é a seguinte:
+
+Para o cenário de até 10 retentativas, com tempo base de 300ms:
+
+- tentativa falha: espera **300**ms (_300 * 2^0_).
+- 1ª retentativa falha: espera **600**ms (_300 * 2^1_).
+- 2ª retentativa falha: espera **1200**ms (_300 * 2^2_).
+- 3ª retentativa falha: espera **2400**ms (_300 * 2^3_).
+- 4ª retentativa falha: espera **4800**ms (_300 * 2^4_).
+- 5ª retentativa falha: espera **9600**ms (_300 * 2^5_).
+- 6ª retentativa falha: espera **19200**ms (_300 * 2^6_).
+- 7ª retentativa falha: espera **38400**ms (_300 * 2^7_).
+- 8ª retentativa falha: espera **76800**ms (_300 * 2^8_).
+- 9ª retentativa falha: espera **153600**ms (_300 * 2^9_).
+- 10ª retentativa falha. Lança ``NoRetriesLeftException``.
+
+Sendo possível concluir que o setup de até 10x retentativas com tempo base de 300ms possui potencial para levar até 306900ms, isto é, até aproximadamente 5 minutos (soma de todas as esperas).
+
+A fórmula é a seguinte:
+
+```tempo de espera = tempo base * 2 ^ (número de retentativas já executadas)```
+
+Além da API do ``Trier`` possibilitar o setup de vários cenários distintos para retentativa numa mesma ação, ela também disponibiliza um método para setup de _handler_ em caso de exaustão. Ou seja, para casos de esgotamento de retentativas. No exemplo dado acima, tal _handler_ seria invocado no momento que a 10ª retentativa teria falhado.
+
+É assim:
+
+```java
+Trier.of(() -> this.doSomethingWith(thatThing))
+        .retryOn(IOException.class, 5, 300, TimeUnit.MILLISECONDS)
+        .retryOn(ServiceUnavailableException.class, 10, 100, TimeUnit.MILLISECONDS)
+        .onExhaustion(failureStatus -> this.handleExhaustion(failureStatus))//<- é executado em caso de esgotar retentativas
+        .onUnexpectedExceptions(this::handleUnexpectedException)
+        .execute();
+```
+
+O tipo de _failureStatus_ é ``FailureStatus``, que possui os seguintes campos:
+
+- exception: a exception responsável por ter causado a exaustão do ``Trier`` para a ação.
+- totalOfRetries: quantas tentativas aconteceram para que a exaustão tenha ocorrido.
+
+Daí cabe ao desenvolvedor escolher o que fazer nesse cenário.
+
+Mais uma conveniência que o ``Trier`` possibilita é que sempre quando uma retentativa acontece, o desenvolvedor pode criar um ``RetrySubscriber`` para receber uma notificação e reagir como quiser a ela (gravar logs, enviar métricas, etc.).
+
+Para declarar um _subscriber_, basta criar uma classe que implemente a interface ``RetrySubscriber``:
+
+```java
+
+public class MyOwnRetrySubscriber implements RetrySubscriber{
+    
+    @Override
+    public void receiveRetryNotification(RetryNotification retryNotification){
+        //gravar logs, extrair métricas, etc.
+    }
+    
+}
+```
+O objeto recebido, do tipo ``RetryNotification``, possui os seguintes campos:
+
+- cause: exception que causou a retentativa.
+- totalOfRetriesAtThisPoint: quantas retentativas já ocorreram para esse cenário até o momento da notificação.
+
+Para que o _subscriber_ seja utilizado pela SDK, é necessário que ele seja fornecido para o ``RetryNotifier``:
+
+```java
+
+RetryNotifier.SINGLETON.subscribe(new MyOwnRetrySubscriber());
+
+```
+
+É crucial que a implementação de ``RetrySubscriber`` seja fornecida para o ``RetryNotifier`` em tempo de bootstrap da aplicação cliente, para que a instância já esteja presente em caso de qualquer retentativa ocorrer.
+
+O ``RetryNotifier`` emite as notificações em seu próprio _Pool_ de _Threads_, significando que se uma retentativa ocorre na _Thread_ de uma requisição sendo atendida pela aplicação cliente e ela está preparada para receber notificações, este recebimento acontecerá em outra _Thread_, de forma não bloqueante.
+
+É possível personalizar a _Pool_ de _Threads_ usada pelo ``RetryNotifier`` por meio do componente ``RetryNotifierThreadPoolProvider``:
+
+```java
+RetryNotifierThreadPoolProvider.SINGLETON
+        .setMinSize(3)//<- tamanho mínimo da Pool de Threads
+        .setMaxSize(15)//<- tamanho máximo para a Pool
+        .setKeepAliveTimeForIdleThreadsInSeconds(4)//<- limite de segundos 1 thread extra pode ficar viva e ociosa
+        .setQueueCapacity(10)//<- quantas notificações podem ser enfileiradas antes de começar a escalar as Threads
+        .setPoolName("MyCustomRetryNotifierPool");//<- nome da Pool
+
+```
+
+Assim como a inscrição de um ``RetrySubscriber``, é importante que customizações como essa da _Pool_ de _Threads_ seja realizada em tempo de bootstrap da aplicação cliente.
+
+Caso o desenvolvedor não forneça personalizações para a _Pool_, esses são os valores _default_:
+
+- minSize: 5.
+- maxSize: 30.
+- keepAliveTimeForIdleThreadsInSeconds: 60.
+- queueCapacity: 100.
+- poolName: _CaeRetryNotifierThreadPool_.
 
 <br>
 
